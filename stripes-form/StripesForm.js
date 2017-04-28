@@ -1,5 +1,6 @@
 import React from 'react';
 import {reduxForm} from 'redux-form';
+import { connect } from '@folio/stripes-connect'; // eslint-disable-line
 
 import StripesFormWrapper from "./StripesFormWrapper";
 
@@ -9,13 +10,12 @@ export default function StripesForm(opts) {
 		var StripesForm = React.createClass({
 			render: function() {
 				return (
-					<StripesFormWrapper>
-						<Form {...this.props} />
-					</StripesFormWrapper>	
+					<StripesFormWrapper {...this.props} Form={Form} formOptions={opts} >
+					</StripesFormWrapper>
 				);
 			}
 		});
 		
-		return reduxForm(opts)(StripesForm);		
+		return reduxForm(opts)(opts.connect?connect(StripesForm, opts.connect):StripesForm);
 	};
 }

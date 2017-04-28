@@ -1,4 +1,1 @@
-
-export {default} from './lib/StripesForm';
-
-
+export {default} from './StripesForm'
