@@ -27,19 +27,23 @@ class StripesFormWrapper extends Component {
     }
 
     componentDidMount() {
-        this.unblock = this.props.history.block((nextLocation)=>{
-            if(this.props.dirty) {
-                this.setState({
-                    openModal: true,
-                    nextLocation: nextLocation
-                });
-            }
-            return !this.props.dirty;
-        });
+        if(this.props.formOptions.navigationCheck) {
+            this.unblock = this.props.history.block((nextLocation)=>{
+                if(this.props.dirty) {
+                    this.setState({
+                        openModal: true,
+                        nextLocation: nextLocation
+                    });
+                }
+                return !this.props.dirty;
+            });
+        }
     }
 
     componentWillUnmount(...args) {
-        this.unblock();
+        if(this.props.formOptions.navigationCheck) {
+            this.unblock();
+        }
     }
 
     saveChanges() {
