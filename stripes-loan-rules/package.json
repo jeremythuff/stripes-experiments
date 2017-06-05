@@ -1,9 +1,9 @@
 {
-  "name": "@folio/stripes-form",
+  "name": "@folio/stripes-loan-rules",
   "version": "0.7.0",
-  "description": "Form state management in Stripes.",
+  "description": "An editor component for loan rules.",
   "license": "Apache-2.0",
-  "repository": "folio-org/stripes-expermiments/stripes-form",
+  "repository": "folio-org/stripes-expermiments/stripes-loan-rules",
   "publishConfig": {
     "registry": "https://repository.folio.org/repository/npm-folio/"
   },
